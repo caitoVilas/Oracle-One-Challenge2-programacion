@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+}
+
+.container-home h1{
+    margin-top: 2rem;
+}
+
+.btn{
+    margin-top: 2rem;
+    
+    padding: 1rem 1.5rem;
+    border:solid #0A3871;
+    background-color: #fff;
+    color: #0A3871;
+    border-radius: 24px;
+    font-size: 2vw;
+}
+
+.btn:hover{
+    background-color: #0A3871;
+    color: #fff;
+}
+
+.container-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+}
+
+.container-btn{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.container-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+}
+
+.container-zone-game{
+    height: 90vh;
+}
+
+h2{
+    margin-top: 3rem;
+}
+
+.form-control{
+    margin-top: 4rem;
+    width: 90%;
+    padding: 1rem 1rem;
+    border: none none thin;
+}
+.noView{
+    display: none;
+}
+
+.container-footer{
+    width: 100%;
+    padding: 10px 10px;
+    margin-top: 1rem;
+    text-align: center;
+    background-color: #0A3871;
+    color: #ffffff;
+}
+
+.chtm{
+    color: red;
+    font-size: 30px;
+}
+
+.ccss{
+    color: blue;
+    font-size: 30px;
+}
+
+.cjs{
+    color: yellow;
+    font-size: 30px;
+}
