@@ -15,11 +15,12 @@
 
 .container-home h1{
     margin-top: 2rem;
+    font-size: 4rem;
 }
 
 .btn{
     margin-top: 2rem;
-    
+    cursor: pointer;
     padding: 1rem 1.5rem;
     border:solid #0A3871;
     background-color: #fff;
@@ -60,6 +61,10 @@
     height: 90vh;
 }
 
+.container-zone-result{
+    margin-bottom: 1rem;
+}
+
 h2{
     margin-top: 3rem;
 }
@@ -96,4 +101,32 @@ h2{
 .cjs{
     color: yellow;
     font-size: 30px;
+}
+
+.word_{
+    font-size: 3rem;
+    color: #0A3871;
+}
+
+.container-keyword{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-key{
+    padding: .3rem;
+    background-color: #fff;
+    color: #0A3871;
+    cursor: pointer;
+    border-radius: 55%;
+}
+
+.btn-key:hover{
+    background-color: #0A3871;
+    color: #fff;
+}
+
+.disable{
+    display: none;
 }
