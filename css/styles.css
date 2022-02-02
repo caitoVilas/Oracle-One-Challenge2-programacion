@@ -58,7 +58,17 @@
 }
 
 .container-zone-game{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     height: 90vh;
+}
+
+.container-horca{
+   
+    
 }
 
 .container-zone-result{
@@ -129,4 +139,32 @@ h2{
 
 .disable{
     display: none;
+}
+
+#msg{
+    font-size: 2rem;
+    color: green;
+}
+
+#msg-err{
+    font-size: 2rem;
+    color: red;
+}
+
+.win{
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 800px) {
+
+    .container-zone-game{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        height: 90vh;
+    }
+
+    
 }

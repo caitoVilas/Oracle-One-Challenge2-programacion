@@ -16,7 +16,13 @@
     </main>
     <section id="game" class="container-game noView">
         <div class="container-zone-game">
-            <h2>Juego</h2>
+            <div id="ahorcado" class="container-horca">
+              <img id="horca" src="./images/1.jpg" alt="horca">
+            </div>
+            <div class="container-mensaje">
+                <p id="msg"></p>
+                <p id="msg-err"></p>
+            </div>
         </div>
         <div class="container-zone-result">
             <p id="output" class="word_"></p>
@@ -51,7 +57,7 @@
             <button class="btn-key" name="keyPress">Z</button>
         </container-keyword>
         <div class="container-btn">
-            <button class="btn">Nuevo Juego</button>
+            <button class="btn btn-new">Nuevo Juego</button>
             <button  class="btn btn-cancell">Desistir</button>
         </div>
        
