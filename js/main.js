@@ -1,9 +1,10 @@
 const d = document;
-const secretWords = ["CASA", "PERRO", "ALURA", "ORACLE", "JAVASCRIPT"];
+let secretWords = ["CASA", "PERRO", "ALURA", "ORACLE", "JAVASCRIPT"];
 let word;
 let hyphenatedWord;
 let letter;
 let contador = 0;
+localStorage.setItem("words", JSON.stringify(secretWords));
 
 
 // captura elementos
@@ -16,6 +17,8 @@ const $btnPress = d.getElementsByName('keyPress');
 const $msg = d.querySelector('#msg');
 const $msgErr = d.querySelector('#msg-err')
 const $ahorcado = d.querySelector('#horca');
+const $newWord = d.querySelector('.form-control');
+const $btnSave = d.querySelector(".btn-save");
 
 
 d.addEventListener('DOMContentLoaded', (e) => {
@@ -24,6 +27,7 @@ d.addEventListener('DOMContentLoaded', (e) => {
     addWord('#btn-add');
     goHome('.btn-cancell');
     newGame('.btn-new');
+    saveWord('.btn-save');
 });
 
 $btnPress.forEach(function(btn){
@@ -85,6 +89,7 @@ const addWord = (btnAdd) => {
             $home.classList.add('noView');
             $game.classList.add('noView');
             $add.classList.remove('noView');
+
         }
     });
 }
@@ -104,7 +109,9 @@ const goHome = (btnCancel) => {
 
 const initialize = () => {
 
-    word = secretWords[Math.floor(Math.random()* secretWords.length)];
+    workingWord = localStorage.getItem('words');
+    workingWord = JSON.parse(workingWord);
+    word = workingWord[Math.floor(Math.random()* workingWord.length)];
     hyphenatedWord = word.replace(/./g,"_ ");
     console.log("initialize")
     console.log(word)
@@ -146,3 +153,24 @@ const newGame = (btnNew) => {
 
 
 String.prototype.replaceAt=function(index, character) { return this.substr(0, index) + character + this.substr(index+character.length); } 
+
+const saveWord = (btnSave) => {
+
+    d.addEventListener('click', (e) => {
+
+        if(e.target.matches(btnSave)){
+
+
+            let newWord = $newWord.value;
+            newWord = newWord.toUpperCase();
+            if(newWord == '')
+                return;
+            let wordsCollection = localStorage.getItem('words');
+            wordsCollection = JSON.parse(wordsCollection);
+            wordsCollection.push(newWord);
+            localStorage.removeItem('words');
+            localStorage.setItem('words', JSON.stringify(wordsCollection));
+            alert('Palabra Guardada');
+        }
+    });
+}
