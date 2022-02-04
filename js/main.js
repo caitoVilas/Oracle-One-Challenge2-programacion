@@ -12,6 +12,7 @@ localStorage.setItem("words", JSON.stringify(secretWords));
 const $home = d.getElementById('home');
 const $game = d.getElementById('game');
 const $add  = d.getElementById('add-word');
+const $keyword = d.getElementById('keyword');
 let $output = d.querySelector('#output');
 const $btnPress = d.getElementsByName('keyPress');
 const $msg = d.querySelector('#msg');
@@ -41,6 +42,7 @@ function play(letter){
 
     let isFail = true;
     
+    
     for(let i in word){
 
         if(letter == word[i]){
@@ -53,12 +55,14 @@ function play(letter){
         contador++;
         $ahorcado.src = `./images/${contador +1}.jpg`;
         if(contador == 5){
+            $keyword.classList.add('noView')
             $msgErr.innerHTML = `<i class="far fa-sad-tear 3x"></i><br>Has fallado!`
         }
         console.log("error")
     }else{
         $output.innerHTML = hyphenatedWord;
         if(hyphenatedWord.indexOf('_') < 0){
+            $keyword.classList.add('noView');
             $msg.innerHTML = `<i class="fas fa-trophy 3x"></i><br>Felicitaciones has ganado!`;
         }
     }
@@ -73,8 +77,11 @@ const startGame = (btnGame) => {
             $home.classList.add('noView');
             $add.classList.add('noView');
             $game.classList.remove('noView');
+            $keyword.classList.remove('noView');
+            console.log($keyword)
             initialize();
             $output.innerHTML = hyphenatedWord;
+           
             
         }
     });
@@ -144,6 +151,7 @@ const newGame = (btnNew) => {
             $home.classList.add('noView');
             $add.classList.add('noView');
             $game.classList.remove('noView');
+            $keyword.classList.remove('noView');
             initialize();
             $output.innerHTML = hyphenatedWord;
         }
